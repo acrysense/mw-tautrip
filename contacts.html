@@ -36,18 +36,19 @@
 								<a href="#" class="nav__link">Календарь</a>
 							</li>
 							<li class="nav__item">
-								<a href="#" class="nav__link">Дневник</a>
+								<a href="diary.html" class="nav__link">Дневник</a>
 							</li>
 							<li class="nav__item nav__item--mobile">
 								<a href="index.html" class="nav__logotype">
-									<img src="img/logotype.svg" width="44" height="34" alt="TAUTRIP">
+									<img src="img/logotype.svg" width="44" height="34" alt="TAUTRIP" class="default">
+									<img src="img/logotype-white.svg" width="44" height="34" alt="TAUTRIP" class="white">
 								</a>
 							</li>
 							<li class="nav__item">
-								<a href="#" class="nav__link">Команда</a>
+								<a href="team.html" class="nav__link">Команда</a>
 							</li>
 							<li class="nav__item">
-								<a href="#" class="nav__link">Контакты</a>
+								<a href="contacts.html" class="nav__link">Контакты</a>
 							</li>
 						</ul>
 					</nav>
@@ -114,6 +115,57 @@
 				</div>
 			</section>
 			<!-- end of contacts -->
+			<!-- image slider -->
+			<div class="image-slider" id="image-slider">
+				<div class="image-slider__slider">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<picture class="image-slider__slide" data-swiper-parallax-x="50%">
+									<img src="img/image-slider-01.jpg" srcset="img/image-slider-01@2x.jpg 2x" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="image-slider__slide" data-swiper-parallax-x="50%">
+									<img src="img/image-slider-02.jpg" srcset="img/image-slider-02@2x.jpg 2x" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="image-slider__slide" data-swiper-parallax-x="50%">
+									<img src="img/image-slider-01.jpg" srcset="img/image-slider-01@2x.jpg 2x" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="image-slider__slide" data-swiper-parallax-x="50%">
+									<img src="img/image-slider-02.jpg" srcset="img/image-slider-02@2x.jpg 2x" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="image-slider__slide" data-swiper-parallax-x="50%">
+									<img src="img/image-slider-01.jpg" srcset="img/image-slider-01@2x.jpg 2x" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="image-slider__slide" data-swiper-parallax-x="50%">
+									<img src="img/image-slider-02.jpg" srcset="img/image-slider-02@2x.jpg 2x" alt="Image">
+								</picture>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<button class="swiper-button-prev" aria-label="Назад">
+						<svg class="swiper-button-icon">
+							<use xlink:href="img/sprite.svg#icon-arrow-prev"></use>
+						</svg>
+					</button>
+					<button class="swiper-button-next" aria-label="Далее">
+						<svg class="swiper-button-icon">
+							<use xlink:href="img/sprite.svg#icon-arrow-next"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+			<!-- end of image slider -->
 		</div>
 		<!-- end of content -->
 		<!-- footer -->
