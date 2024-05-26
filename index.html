@@ -66,7 +66,10 @@
 			<!-- main -->
 			<section class="main" id="main">
 				<div class="container">
-					<div class="main__top"></div>
+					<picture class="main__top">
+						<source srcset="img/tautrip.svg" media="(min-width: 744px)">
+						<img src="img/tautrip-mobile.svg" alt="TAUTRIP">
+					</picture>
 					<div class="main__wrap">
 						<picture class="main__icon">
 							<img src="img/gerb.svg" alt="Gerb">
@@ -74,6 +77,9 @@
 						<h2 class="main__title">Туртрип по Дагестану <br>России и Миру</h2>
 						<div class="main__inner">
 							<a href="#" class="main__btn main__btn--wide">Все путешествия</a>
+							<a href="#" class="main__btn main__btn--white">
+								<img src="img/icon-dice.svg" alt="Icon">
+							</a>
 						</div>
 					</div>
 					<picture class="main__bg">
@@ -133,6 +139,115 @@
 				</div>
 			</section>
 			<!-- end of what is -->
+			<!-- check list -->
+			<div class="checklist" id="checklist">
+				<div class="checklist__slider">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<picture class="checklist__bg" data-swiper-parallax-x="50%">
+									<img src="img/checklist-bg.jpg" srcset="img/checklist-bg@2x.jpg 2x" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="checklist__bg" data-swiper-parallax-x="50%">
+									<img src="img/checklist-bg.jpg" srcset="img/checklist-bg@2x.jpg 2x" alt="Image">
+								</picture>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<button class="swiper-button-prev" aria-label="Назад">
+						<svg class="swiper-button-icon">
+							<use xlink:href="img/sprite.svg#icon-arrow-prev"></use>
+						</svg>
+					</button>
+					<button class="swiper-button-next" aria-label="Далее">
+						<svg class="swiper-button-icon">
+							<use xlink:href="img/sprite.svg#icon-arrow-next"></use>
+						</svg>
+					</button>
+					<div class="checklist__buttons">
+						<a href="#" class="checklist__btn">
+							<img src="img/checklist-btn.svg" alt="Icon">
+						</a>
+						<a href="#" class="checklist__btn checklist__btn--border">
+							<svg>
+								<use xlink:href="img/sprite.svg#icon-arrow-more"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- end of check list -->
+			<!-- search adventure -->
+			<section class="search-adventure" id="search-adventure">
+				<div class="container">
+					<div class="search-adventure__wrapper">
+						<div class="search-adventure__left">
+							<h2 class="search-adventure__heading">Поиск <br>приключений</h2>
+							<div class="search-adventure__img-wrap search-adventure__img-wrap--desktop">
+								<picture class="search-adventure__img">
+									<img src="img/illustration-camping.svg" alt="Image">
+								</picture>
+							</div>
+						</div>
+						<div class="search-adventure__right">
+							<div class="search-adventure__content content">
+								<p>Если вы заинтересованы в участии в одной из наших экспедиций, будьте готовы к тому, что это не будет простою увеселительной прогулкой. Вас ждут как маленькие, так и большие победы над самим собой и своими страхами, поиск ответов на вопросы, которые вы может быть и не задавали себе в обычной жизни, а также бесконечные внутренние размышления, в то время как ваши ноги идут шаг за шагом по ранее неизведанной тропе. Именно ради этого мы и отправляемся в путь.</p>
+								<br>
+								<p>Обращайте внимание на различные уровни сложности маршрутов. Наша цель — чтобы каждый человек нашел именно свою идеальную историю, поэтому не удивляйтесь, если мы будем отговаривать вас от участия в походе с высоким рейтингом сложности. Иногда начинать с чего-то более простого помогает избежать разочарований, становиться сильнее и двигаться дальше!</p>
+							</div>
+							<div class="search-adventure__img-wrap search-adventure__img-wrap--mobile">
+								<picture class="search-adventure__img">
+									<img src="img/illustration-camping.svg" alt="Image">
+								</picture>
+							</div>
+						</div>
+					</div>
+					<div class="search-adventure__wrapper search-adventure__wrapper--reverse">
+						<div class="search-adventure__left">
+							<picture class="search-adventure__decor">
+								<img src="img/boots.svg" alt="Image">
+							</picture>
+						</div>
+						<div class="search-adventure__right">
+							<div class="search-adventure__content content">
+								<h2>«Мы используем и выдаём только самое качественное снаряжение, ведь от этого зависит не только наш и ваш комфорт, но и безопасность.»</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end of search adventure -->
+			<!-- reviews -->
+			<section class="reviews" id="reviews">
+				<div class="container">
+					<picture class="reviews__bg">
+						<img src="img/reviews-bg.jpg" srcset="img/reviews-bg@2x.jpg 2x" alt="Image">
+					</picture>
+				</div>
+			</section>
+			<!-- end of reviews -->
+			<!-- moments -->
+			<section class="moments" id="moments">
+				<div class="container">
+					<div class="moments__wrapper">
+						<div class="moments__left">
+							<h2 class="moments__heading">Незабы&shy;ваемые <br>мгновения</h2>
+						</div>
+						<div class="moments__right">
+							<div class="moments__content content">
+								<p>Ценное время наедине с собой, знакомство с новыми людьми, получение новых впечатлений и знаний о нашем мире. Да, будут вызовы, но мы уверены, что трудности - это не только возможность узнать что-то новое о себе в новых обстоятельствах, но и способ ощутить себя живым.</p>
+							</div>
+						</div>
+					</div>
+					<picture class="moments__bg">
+						<img src="img/illustration-mountains.svg" alt="Image">
+					</picture>
+				</div>
+			</section>
+			<!-- end of moments -->
 			<!-- application -->
 			<section class="application" id="application">
 				<div class="container">
@@ -167,6 +282,58 @@
 				</div>
 			</section>
 			<!-- end of application -->
+			<!-- about us -->
+			<section class="about-us" id="about-us">
+				<div class="container">
+					<h2 class="about-us__heading">О нас пишут</h2>
+					<div class="about-us__wrapper">
+						<div class="about-us__item">
+							<picture class="about-us__img">
+								<img src="img/partner-01.png" srcset="img/partner-01@2x.png 2x" alt="Image">
+							</picture>
+						</div>
+						<div class="about-us__item">
+							<picture class="about-us__img">
+								<img src="img/partner-02.png" srcset="img/partner-02@2x.png 2x" alt="Image">
+							</picture>
+						</div>
+						<div class="about-us__item">
+							<picture class="about-us__img">
+								<img src="img/partner-03.png" srcset="img/partner-03@2x.png 2x" alt="Image">
+							</picture>
+						</div>
+						<div class="about-us__item">
+							<picture class="about-us__img">
+								<img src="img/partner-04.png" srcset="img/partner-04@2x.png 2x" alt="Image">
+							</picture>
+						</div>
+						<div class="about-us__item">
+							<picture class="about-us__img">
+								<img src="img/partner-05.png" srcset="img/partner-05@2x.png 2x" alt="Image">
+							</picture>
+						</div>
+						<div class="about-us__item">
+							<picture class="about-us__img">
+								<img src="img/partner-06.png" srcset="img/partner-06@2x.png 2x" alt="Image">
+							</picture>
+						</div>
+						<div class="about-us__item">
+							<picture class="about-us__img">
+								<img src="img/partner-07.png" srcset="img/partner-07@2x.png 2x" alt="Image">
+							</picture>
+						</div>
+						<div class="about-us__item">
+							<picture class="about-us__img">
+								<img src="img/partner-08.png" srcset="img/partner-08@2x.png 2x" alt="Image">
+							</picture>
+						</div>
+					</div>
+					<picture class="about-us__bg">
+						<img src="img/about-us-bg.png" srcset="img/about-us-bg@2x.png 2x" alt="Image">
+					</picture>
+				</div>
+			</section>
+			<!-- end of about us -->
 		</div>
 		<!-- end of content -->
 		<!-- footer -->
