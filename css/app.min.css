@@ -1022,7 +1022,7 @@ svg {
   display: block;
   overflow: hidden;
   width: 100%;
-  height: 272px;
+  height: 252px;
 }
 .main__top img {
   position: absolute;
@@ -1067,7 +1067,7 @@ svg {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 217px;
+  padding-top: 210px;
   padding-bottom: 60px;
   min-height: calc(100dvh - 102px);
   color: #FFFFFF;
@@ -1112,7 +1112,7 @@ svg {
 .main__title {
   display: block;
   margin: 0 auto;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: normal;
   font-style: italic;
   line-height: 1.2;
@@ -1134,7 +1134,7 @@ svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 131px;
+  margin-top: 50px;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .main__inner {
