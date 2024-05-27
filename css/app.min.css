@@ -934,6 +934,27 @@ svg {
   height: 94px;
   color: #FFFFFF;
 }
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .content-video__play {
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (min-width: 430px) and (max-width: 743px) {
+  .content-video__play {
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 429px) {
+  .content-video__play {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}
 .content-video__media {
   position: absolute;
   top: 0;
@@ -1262,7 +1283,7 @@ svg {
   }
 }
 .about-project__title {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: -0.04em;
@@ -3308,26 +3329,28 @@ svg {
   }
 }
 
-.team__slider {
-  position: relative;
-  z-index: 1;
+.team {
   margin-top: -102px;
-  overflow: hidden;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
-  .team__slider {
+  .team {
     margin-top: -70px;
   }
 }
 @media screen and (min-width: 430px) and (max-width: 743px) {
-  .team__slider {
+  .team {
     margin-top: -87px;
   }
 }
 @media screen and (max-width: 429px) {
-  .team__slider {
+  .team {
     margin-top: -64px;
   }
+}
+.team__slider {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 .team__slider .swiper-slide {
   overflow: hidden;
@@ -3336,7 +3359,7 @@ svg {
   position: absolute;
   bottom: 20px;
   left: 50%;
-  z-index: 10;
+  z-index: 11;
   -webkit-transform: translate(-50%, 0);
       -ms-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
@@ -3380,7 +3403,7 @@ svg {
   position: absolute;
   top: auto;
   bottom: 196px;
-  z-index: 10;
+  z-index: 11;
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
@@ -3600,23 +3623,7 @@ svg {
 .checklist__slider {
   position: relative;
   z-index: 1;
-  margin-top: -102px;
   overflow: hidden;
-}
-@media screen and (min-width: 744px) and (max-width: 1023px) {
-  .checklist__slider {
-    margin-top: -70px;
-  }
-}
-@media screen and (min-width: 430px) and (max-width: 743px) {
-  .checklist__slider {
-    margin-top: -87px;
-  }
-}
-@media screen and (max-width: 429px) {
-  .checklist__slider {
-    margin-top: -64px;
-  }
 }
 .checklist__slider .swiper-slide {
   overflow: hidden;
