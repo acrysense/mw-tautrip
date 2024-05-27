@@ -2321,24 +2321,14 @@ svg {
   }
 }
 .about-us__wrapper {
-  position: absolute;
-  right: calc((100vw - 1246px) / 2);
-  bottom: 207px;
-  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 32px 45px 22px 61px;
+  margin-top: 71px;
   max-width: 633px;
   width: 100%;
-  background: #FFFFFF;
-}
-@media screen and (min-width: 1024px) and (max-width: 1399px) {
-  .about-us__wrapper {
-    right: 40px;
-  }
 }
 @media screen and (max-width: 1023px) {
   .about-us__wrapper {
@@ -2482,10 +2472,14 @@ svg {
 @media screen and (min-width: 430px) and (max-width: 743px) {
   .contacts__heading {
     margin-bottom: 81px;
+  }
+}
+@media screen and (max-width: 743px) {
+  .contacts__heading {
     font-size: 36px;
   }
 }
-@media screen and (max-width: 429px) {
+@media screen and (max-width: 429px) and (max-height: 699px) {
   .contacts__heading {
     display: none;
   }
