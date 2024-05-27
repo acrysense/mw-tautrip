@@ -1021,13 +1021,8 @@ svg {
   z-index: 1;
   display: block;
   overflow: hidden;
-  max-height: 274px;
   width: 100%;
-}
-.main__top::before {
-  content: "";
-  display: block;
-  padding-top: 19%;
+  height: 272px;
 }
 .main__top img {
   position: absolute;
@@ -1044,12 +1039,24 @@ svg {
   -o-object-position: bottom center;
      object-position: bottom center;
 }
-@media screen and (max-width: 743px) {
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
   .main__top {
-    max-height: 200px;
+    height: 222px;
   }
-  .main__top::before {
-    padding-top: 37%;
+}
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .main__top {
+    height: 162px;
+  }
+}
+@media screen and (min-width: 430px) and (max-width: 743px) {
+  .main__top {
+    height: 158px;
+  }
+}
+@media screen and (max-width: 429px) {
+  .main__top {
+    height: 118px;
   }
 }
 .main__wrap {
