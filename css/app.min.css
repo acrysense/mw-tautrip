@@ -283,6 +283,11 @@ svg {
   opacity: 1;
   pointer-events: auto;
 }
+@media screen and (hover: hover) {
+  .header--gray .header__logotype:hover::before, .header--gray .header__logotype:hover::after {
+    opacity: 1;
+  }
+}
 .header--gray .nav__link {
   color: #444749;
 }
@@ -351,10 +356,51 @@ svg {
       -ms-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   display: block;
-  overflow: hidden;
   min-width: 44px;
   width: 44px;
   height: 34px;
+}
+.header__logotype::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  display: block;
+  width: 39px;
+  height: 33px;
+  opacity: 0;
+  background-image: url(../img/logotype-triangle.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.header__logotype::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  display: block;
+  width: 39px;
+  height: 33px;
+  opacity: 0;
+  background-image: url(../img/logotype-triangle.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  -webkit-filter: blur(14px);
+          filter: blur(14px);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .header__logotype img {
   position: absolute;
@@ -370,9 +416,22 @@ svg {
   transition: all 0.25s ease-in-out;
 }
 .header__logotype .white,
-.header__logotype .gray {
+.header__logotype .gray,
+.header__logotype .red {
   opacity: 0;
   pointer-events: none;
+}
+@media screen and (hover: hover) {
+  .header__logotype:hover .default,
+  .header__logotype:hover .white,
+  .header__logotype:hover .gray {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .header__logotype:hover .red {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 @media screen and (min-width: 430px) and (max-width: 743px) {
   .header__logotype {
@@ -3313,8 +3372,8 @@ svg {
 }
 @media screen and (hover: hover) {
   .diary-card__img:hover img {
-    -webkit-transform: scale(1.1) translateZ(0);
-            transform: scale(1.1) translateZ(0);
+    -webkit-transform: scale(1.05) translateZ(0);
+            transform: scale(1.05) translateZ(0);
     -webkit-transition: all 0.45s ease;
     transition: all 0.45s ease;
   }
@@ -3490,8 +3549,8 @@ svg {
 
 @media screen and (hover: hover) {
   .read-also-card:hover .read-also-card__img img {
-    -webkit-transform: scale(1.1) translateZ(0);
-            transform: scale(1.1) translateZ(0);
+    -webkit-transform: scale(1.05) translateZ(0);
+            transform: scale(1.05) translateZ(0);
     -webkit-transition: all 0.45s ease;
     transition: all 0.45s ease;
   }
@@ -5047,6 +5106,11 @@ svg {
     padding: 2px 10px;
   }
 }
+.calendar-filter__rating {
+  padding: 10.5px 8px;
+  border: 2px solid #FFFFFF;
+  border-radius: 98px;
+}
 
 @media screen and (max-width: 743px) {
   .calendar-list__wrapper {
@@ -5958,4 +6022,43 @@ svg {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid #1A1A1A;
+}
+
+.rating-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.rating-select__input {
+  display: none;
+}
+.rating-select__input:hover ~ .rating-select__label .rating-select__icon {
+  color: #C1C1C1;
+}
+.rating-select__input:checked ~ .rating-select__label .rating-select__icon {
+  color: #FFFFFF;
+}
+.rating-select__label {
+  display: block;
+  margin: 0;
+  cursor: pointer;
+}
+.rating-select__label ~ .rating-select__label {
+  margin-left: 3px;
+}
+.rating-select__icon {
+  min-width: 28px;
+  width: 28px;
+  height: 28px;
+  color: #444749;
 }
