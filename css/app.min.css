@@ -269,7 +269,7 @@ svg {
 }
 @media screen and (max-width: 359px) {
   .flatpickr-calendar {
-    width: 100%;
+    width: 300px;
   }
 }
 
@@ -455,7 +455,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 @media screen and (max-width: 359px) {
   span.flatpickr-weekday {
-    padding-right: 8px;
+    padding-right: 0;
     max-width: 14.29%;
     width: 14.29%;
     height: 30px;
@@ -495,7 +495,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 @media screen and (max-width: 359px) {
   .flatpickr-day {
-    padding-right: 8px;
+    padding-right: 0;
     max-width: 14.29%;
     width: 14.29%;
     height: 30px;
@@ -955,6 +955,16 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   -webkit-transition: all 0.25s ease-in-out 0.4s;
   transition: all 0.25s ease-in-out 0.4s;
 }
+@media screen and (max-height: 639px) {
+  .menu.is--active .menu__img {
+    -webkit-transform: rotate(165deg) translate(-100%, 20px);
+        -ms-transform: rotate(165deg) translate(-100%, 20px);
+            transform: rotate(165deg) translate(-100%, 20px);
+    opacity: 0;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+  }
+}
 .menu.is--active .menu__decor .white {
   opacity: 1;
   pointer-events: auto;
@@ -1043,6 +1053,14 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
     bottom: 60px;
     width: 356px;
     height: 247px;
+  }
+}
+@media screen and (max-height: 639px) {
+  .menu__img {
+    -webkit-transform: rotate(165deg) translate(-100%, 20px);
+        -ms-transform: rotate(165deg) translate(-100%, 20px);
+            transform: rotate(165deg) translate(-100%, 20px);
+    opacity: 0;
   }
 }
 .menu__decor {
@@ -5326,10 +5344,153 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   }
 }
 
+.calendar-filter__trigger {
+  position: absolute;
+  top: 20.5px;
+  left: 0;
+  z-index: 600;
+  display: block;
+  overflow: hidden;
+  margin-left: 20px;
+  padding: 0;
+  min-width: 36px;
+  width: 36px;
+  height: 36px;
+  font-size: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.calendar-filter__trigger.is--active .calendar-filter__trigger-inner {
+  background: #FFFFFF;
+}
+.calendar-filter__trigger.is--active .calendar-filter__trigger-inner:first-child {
+  top: 17px;
+  left: 5px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 26px;
+}
+.calendar-filter__trigger.is--active .calendar-filter__trigger-inner:first-child::before {
+  opacity: 0;
+}
+.calendar-filter__trigger.is--active .calendar-filter__trigger-inner:nth-child(2) {
+  opacity: 0;
+}
+.calendar-filter__trigger.is--active .calendar-filter__trigger-inner:last-child {
+  top: 17px;
+  left: 5px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 26px;
+}
+.calendar-filter__trigger.is--active .calendar-filter__trigger-inner:last-child::before {
+  opacity: 0;
+}
+@media screen and (min-width: 744px) {
+  .calendar-filter__trigger {
+    display: none;
+  }
+}
+@media screen and (max-width: 429px) {
+  .calendar-filter__trigger {
+    top: 15.5px;
+    min-width: 34px;
+    width: 34px;
+    height: 34px;
+  }
+  .calendar-filter__trigger.is--active .calendar-filter__trigger-inner:first-child {
+    top: 12px;
+  }
+  .calendar-filter__trigger.is--active .calendar-filter__trigger-inner:last-child {
+    top: 12px;
+  }
+}
+.calendar-filter__trigger-inner {
+  position: absolute;
+  left: 5px;
+  z-index: 1;
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #444749;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.calendar-filter__trigger-inner:first-child {
+  top: 7px;
+  left: 12px;
+  width: 19px;
+}
+.calendar-filter__trigger-inner:first-child::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  z-index: 1;
+  -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  display: block;
+  width: 6px;
+  height: 6px;
+  border: 1.5px solid #444749;
+  border-radius: 50%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.calendar-filter__trigger-inner:nth-child(2) {
+  top: 17px;
+}
+.calendar-filter__trigger-inner:last-child {
+  top: 27px;
+  width: 19px;
+}
+.calendar-filter__trigger-inner:last-child::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  z-index: 1;
+  -webkit-transform: translate(100%, 0);
+      -ms-transform: translate(100%, 0);
+          transform: translate(100%, 0);
+  display: block;
+  width: 6px;
+  height: 6px;
+  border: 1.5px solid #444749;
+  border-radius: 50%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+@media screen and (max-width: 429px) {
+  .calendar-filter__trigger-inner {
+    left: 6px;
+    width: 22px;
+  }
+  .calendar-filter__trigger-inner:first-child {
+    top: 5px;
+    width: 15px;
+  }
+  .calendar-filter__trigger-inner:nth-child(2) {
+    top: 12px;
+  }
+  .calendar-filter__trigger-inner:last-child {
+    top: 19px;
+    width: 15px;
+  }
+}
 .calendar-filter__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -5349,13 +5510,31 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 90;
-    display: none;
+    z-index: 400;
+    -webkit-transform: translate(0, -104%);
+        -ms-transform: translate(0, -104%);
+            transform: translate(0, -104%);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     background: #1A1A1A;
+    visibility: hidden;
+    pointer-events: none;
+    -webkit-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out;
+  }
+  .calendar-filter__wrapper.is--active {
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .calendar-filter__wrapper.is--active .calendar-filter__item {
+    opacity: 1;
+    -webkit-transition: all 0.25s ease-in-out 0.4s;
+    transition: all 0.25s ease-in-out 0.4s;
   }
 }
 @media screen and (min-width: 430px) and (max-width: 743px) {
@@ -5374,6 +5553,14 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   }
   .calendar-filter__item:nth-child(5n), .calendar-filter__item:nth-child(5n-1), .calendar-filter__item:nth-child(5n-2), .calendar-filter__item:nth-child(5n-3) {
     margin-left: 12px;
+  }
+}
+@media screen and (max-width: 743px) {
+  .calendar-filter__item {
+    opacity: 0;
+    width: 100%;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
   }
 }
 @media screen and (min-width: 430px) and (max-width: 743px) {
@@ -5423,7 +5610,8 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .calendar-filter__btn {
-    padding: 3px 10px;
+    padding: 6px 10px;
+    font-size: 14px;
     border: 1px solid #FFFFFF;
   }
 }
@@ -5438,7 +5626,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   content: "";
   position: absolute;
   top: 50%;
-  left: 26px;
+  left: 20px;
   z-index: 1;
   -webkit-transform: translate(0, -50%);
       -ms-transform: translate(0, -50%);
@@ -5451,6 +5639,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+  pointer-events: none;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .calendar-filter__calendar {
@@ -5469,7 +5658,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
           appearance: none;
   display: block;
   overflow: hidden;
-  padding: 13.5px 12px 13.5px 72px;
+  padding: 13.5px 12px 13.5px 64px;
   max-width: 100%;
   width: 100%;
   height: 100%;
@@ -5481,6 +5670,9 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   background: transparent;
   border: none;
   border-radius: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
 }
 .calendar-filter__date::-webkit-input-placeholder {
   opacity: 1;
@@ -5507,8 +5699,8 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .calendar-filter__date {
-    padding: 9.25px 6px 9.25px 32px;
-    font-size: 12px;
+    padding: 8px 6px 8px 32px;
+    font-size: 14px;
     line-height: 1;
   }
 }
@@ -5520,7 +5712,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .calendar-filter__rating {
-    padding: 2.5px 6px;
+    padding: 7.5px 6px;
     border: 1px solid #FFFFFF;
   }
 }
@@ -6462,15 +6654,23 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   color: #FFFFFF;
 }
 .rating-select__label {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0;
   cursor: pointer;
 }
-.rating-select__label ~ .rating-select__label {
+.rating-select__label:not(:first-child) {
   margin-left: 3px;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
-  .rating-select__label ~ .rating-select__label {
+  .rating-select__label:not(:first-child) {
     margin-left: 2px;
   }
 }
