@@ -227,12 +227,15 @@
 			<!-- end of programs -->
 			<!-- content video -->
 			<div class="content-video" id="content-video">
-				<video playsinline poster="img/video-01.jpg" class="content-video__media">
-					<source src="video/video-01.mp4" type="video/mp4">
-				</video>
-				<svg class="content-video__play">
-					<use xlink:href="img/sprite.svg#icon-play"></use>
-				</svg>
+				<div class="content-video__media">
+					<img src="img/video-01.jpg" alt="Image">
+					<svg class="content-video__play">
+						<use xlink:href="img/sprite.svg#icon-play"></use>
+					</svg>
+				</div>
+				<div class="content-video__media-iframe">
+					<iframe data-src="https://www.youtube.com/embed/gijKKRvvCTM?si=baMNTC5s_rytfY-N" width="100%" height="100%" allow="autoplay; encrypted-media; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
+				</div>
 			</div>
 			<!-- end of content video -->
 			<!-- equipment -->
@@ -578,6 +581,7 @@
 			<picture class="menu__img">
 				<img src="img/sticker-eaglet.svg" alt="Image">
 			</picture>
+			<!-- <div class="menu__letter"></div> -->
 			<div class="menu__decor">
 				<img src="img/tautrip-transparent.svg" alt="Image" class="default">
 				<img src="img/tautrip-white.svg" alt="Image" class="white">

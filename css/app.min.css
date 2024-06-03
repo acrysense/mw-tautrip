@@ -614,18 +614,20 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 .header--gray .hamburger__inner {
   background: #444749;
 }
-.header.is--menu .header__logotype .default,
-.header.is--menu .header__logotype .gray {
-  opacity: 0;
-  pointer-events: none;
-}
-.header.is--menu .header__logotype .white {
-  opacity: 1;
-  pointer-events: auto;
-}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .header {
     padding: 18px 0;
+  }
+}
+@media screen and (max-width: 743px) {
+  .header.is--menu .header__logotype .default,
+  .header.is--menu .header__logotype .gray {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .header.is--menu .header__logotype .white {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 @media screen and (min-width: 430px) and (max-width: 743px) {
@@ -914,6 +916,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
           transform: translate(0, -104%);
   display: block;
   overflow: hidden;
+  max-height: 100dvh;
   width: 100%;
   visibility: hidden;
   pointer-events: none;
@@ -929,7 +932,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   z-index: -1;
   display: block;
   width: 100%;
-  height: calc(100dvh - 158px);
+  height: calc(100dvh - 33px);
   background: #1A1A1A;
 }
 .menu.is--active {
@@ -974,11 +977,6 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 @media screen and (min-width: 768px) {
   .menu {
     display: none;
-  }
-}
-@media screen and (max-width: 429px) {
-  .menu::before {
-    height: calc(100dvh - 118px);
   }
 }
 .menu__wrap {
@@ -1034,8 +1032,8 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
           transform: rotate(165deg) translate(0, 20px);
   display: block;
   overflow: hidden;
-  width: 548px;
-  height: 445px;
+  width: 480px;
+  height: 332px;
   opacity: 0;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
@@ -1063,12 +1061,32 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
     opacity: 0;
   }
 }
+.menu__letter {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  display: block;
+  width: 390px;
+  height: 33px;
+  -webkit-clip-path: url(#my-clip-path);
+          clip-path: url(#my-clip-path);
+}
+@media screen and (max-width: 429px) {
+  .menu__letter {
+    width: 260px;
+    height: 22px;
+  }
+}
 .menu__decor {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: -2;
   width: 100%;
   height: 158px;
 }
@@ -1587,7 +1605,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10;
   display: block;
   width: 100%;
   height: 100%;
@@ -1596,6 +1614,15 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
           clip-path: polygon(0% 0%, 0% 100%, 10% 100%, 10% 10%, 90% 10%, 90% 90%, 10% 90%, 10% 100%, 100% 100%, 100% 0%);
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+.content-video.is--active::after {
+  opacity: 0;
+  visibility: hidden;
+}
+.content-video.is--active .content-video__media {
+  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 .content-video__play {
@@ -1633,6 +1660,25 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   }
 }
 .content-video__media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.content-video__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.content-video__media-iframe {
   position: absolute;
   top: 0;
   right: 0;
@@ -1916,6 +1962,22 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   .main__btn + .main__square {
     margin-left: auto;
   }
+}
+.main__square {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 93px;
+  width: 93px;
+  height: 70px;
+  background: #FFFFFF;
+  border-radius: 98px;
 }
 .main__bg {
   position: absolute;
@@ -2239,12 +2301,28 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   margin-right: calc(50% - 50vw);
   height: 100%;
 }
-.statistics__img img {
+.statistics__img > img:not(.statistics__img-balloon) {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.statistics__img-balloon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  width: 132px;
+  height: 193px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-animation: balloon 2s linear infinite;
+          animation: balloon 2s linear infinite;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .statistics__img {
@@ -2265,6 +2343,59 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   }
 }
 
+@-webkit-keyframes balloon {
+  0% {
+    top: 50%;
+    opacity: 1;
+  }
+  49% {
+    top: -193px;
+    opacity: 1;
+  }
+  50% {
+    top: -193px;
+    opacity: 0;
+  }
+  51% {
+    top: calc(100% + 193px);
+    opacity: 0;
+  }
+  52% {
+    top: calc(100% + 193px);
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes balloon {
+  0% {
+    top: 50%;
+    opacity: 1;
+  }
+  49% {
+    top: -193px;
+    opacity: 1;
+  }
+  50% {
+    top: -193px;
+    opacity: 0;
+  }
+  51% {
+    top: calc(100% + 193px);
+    opacity: 0;
+  }
+  52% {
+    top: calc(100% + 193px);
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
 .what-is {
   position: relative;
   z-index: 1;
@@ -5622,34 +5753,9 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   border: 2px solid #FFFFFF;
   border-radius: 98px;
 }
-.calendar-filter__calendar::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  z-index: 1;
-  -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  display: block;
-  min-width: 46px;
-  width: 46px;
-  height: 46px;
-  background-image: url(../img/sprite.svg#icon-calendar);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  pointer-events: none;
-}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .calendar-filter__calendar {
     border: 1px solid #FFFFFF;
-  }
-  .calendar-filter__calendar::before {
-    left: 4px;
-    min-width: 30px;
-    width: 30px;
-    height: 30px;
   }
 }
 .calendar-filter__date {
@@ -5658,7 +5764,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
           appearance: none;
   display: block;
   overflow: hidden;
-  padding: 13.5px 12px 13.5px 64px;
+  padding: 13.5px 12px;
   max-width: 100%;
   width: 100%;
   height: 100%;
@@ -5666,6 +5772,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   font-weight: normal;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-align: center;
   color: #FFFFFF;
   background: transparent;
   border: none;
@@ -5699,7 +5806,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .calendar-filter__date {
-    padding: 8px 6px 8px 32px;
+    padding: 8px 6px;
     font-size: 14px;
     line-height: 1;
   }
@@ -6688,190 +6795,113 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   }
 }
 
-.loaderViewPort {
-  aspect-ratio: 1;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-width: 93px;
-  width: 93px;
-  height: 70px;
-  background: #FFFFFF;
-  border-radius: 98px;
-}
-
-.loader {
-  /* Container for the dice*/
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transform: rotateX(90deg);
-          transform: rotateX(90deg);
+.dice {
+  position: relative;
+  width: 20px;
+  height: 20px;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-animation: revolve 5s ease infinite;
-          animation: revolve 5s ease infinite;
-}
-
-.dot {
-  width: 0.3rem;
-  aspect-ratio: 1;
-  background-color: black;
-  border-radius: 50%;
-}
-
-.dotContainer {
-  /* Flexbox to arrange dots horizontally */
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.subDotContainer {
-  /* Flexbox to arrange dots vertically */
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.left .dotContainer {
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  -webkit-transform: rotateY(185deg) rotateX(150deg) rotateZ(315deg);
+          transform: rotateY(185deg) rotateX(150deg) rotateZ(315deg);
+  -webkit-animation: rotate 5s linear infinite;
+          animation: rotate 5s linear infinite;
 }
 
 .side {
-  /* Actual sides of the dice */
-  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border: 1px solid #1A1A1A;
   position: absolute;
-  width: 1.4em; /* Varying this will vary the Dice's size */
-  aspect-ratio: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 2px solid black;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.side::before {
+  content: "";
+  width: 20%;
+  height: 20%;
+  background: #1A1A1A;
+  border-radius: 50%;
 }
 
-.front {
-  -webkit-transform: translateZ(0.7rem);
-          transform: translateZ(0.7rem);
+.one {
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
 }
 
-.back {
-  -webkit-transform: translateZ(-0.7rem);
-          transform: translateZ(-0.7rem);
+.two {
+  -webkit-transform: translateX(-10px) rotateY(-90deg);
+          transform: translateX(-10px) rotateY(-90deg);
+}
+.two::before {
+  background: transparent;
+  -webkit-box-shadow: #000 -5px -5px 0px 0px, #000 5px 5px 0px 0px;
+          box-shadow: #000 -5px -5px 0px 0px, #000 5px 5px 0px 0px;
 }
 
-.back .dotContainer {
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+.three {
+  -webkit-transform: translateY(10px) rotateX(90deg);
+          transform: translateY(10px) rotateX(90deg);
+}
+.three::before {
+  -webkit-box-shadow: #000 -5px 5px 0px 0px, #000 5px -5px 0px 0px;
+          box-shadow: #000 -5px 5px 0px 0px, #000 5px -5px 0px 0px;
 }
 
-.left {
-  -webkit-transform: rotateY(90deg) translateZ(0.7rem);
-          transform: rotateY(90deg) translateZ(0.7rem);
+.four {
+  -webkit-transform: translateY(-10px) rotateX(90deg);
+          transform: translateY(-10px) rotateX(90deg);
+}
+.four::before {
+  background: transparent;
+  -webkit-box-shadow: #000 -5px 5px 0px 0px, #000 -5px -5px 0px 0px, #000 5px 5px 0px 0px, #000 5px -5px 0px 0px;
+          box-shadow: #000 -5px 5px 0px 0px, #000 -5px -5px 0px 0px, #000 5px 5px 0px 0px, #000 5px -5px 0px 0px;
 }
 
-.right {
-  -webkit-transform: rotateY(90deg) translateZ(-0.7rem);
-          transform: rotateY(90deg) translateZ(-0.7rem);
+.five {
+  -webkit-transform: translateX(10px) rotateY(90deg);
+          transform: translateX(10px) rotateY(90deg);
+}
+.five::before {
+  -webkit-box-shadow: #000 -5px -5px 0px 0px, #000 -5px 5px 0px 0px, #000 5px -5px 0px 0px, #000 5px 5px 0px 0px;
+          box-shadow: #000 -5px -5px 0px 0px, #000 -5px 5px 0px 0px, #000 5px -5px 0px 0px, #000 5px 5px 0px 0px;
 }
 
-.bottom {
-  -webkit-transform: translateY(0.7rem) rotateX(90deg);
-          transform: translateY(0.7rem) rotateX(90deg);
+.six {
+  -webkit-transform: translateZ(-10px);
+          transform: translateZ(-10px);
+}
+.six::before {
+  background: transparent;
+  -webkit-box-shadow: #000 -5px -5px 0px 0px, #000 -5px 0px 0px 0px, #000 -5px 5px 0px 0px, #000 5px -5px 0px 0px, #000 5px 0px 0px 0px, #000 5px 5px 0px 0px;
+          box-shadow: #000 -5px -5px 0px 0px, #000 -5px 0px 0px 0px, #000 -5px 5px 0px 0px, #000 5px -5px 0px 0px, #000 5px 0px 0px 0px, #000 5px 5px 0px 0px;
 }
 
-.top {
-  -webkit-transform: translateY(-0.7rem) rotateX(90deg);
-          transform: translateY(-0.7rem) rotateX(90deg);
-}
-
-@-webkit-keyframes revolve {
-  0% {
-    -webkit-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 0deg);
-            transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 0deg);
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotateY(0) rotateX(30deg) rotateZ(30deg);
+            transform: rotateY(0) rotateX(30deg) rotateZ(30deg);
   }
-  20% {
-    -webkit-transform: rotate3d(1, 0, 0, 72deg) rotate3d(0, 1, 0, 72deg) rotate3d(0, 0, 1, 72deg);
-            transform: rotate3d(1, 0, 0, 72deg) rotate3d(0, 1, 0, 72deg) rotate3d(0, 0, 1, 72deg);
-  }
-  40% {
-    -webkit-transform: rotate3d(1, 0, 0, 148deg) rotate3d(0, 1, 0, 148deg) rotate3d(0, 0, 1, 148deg);
-            transform: rotate3d(1, 0, 0, 148deg) rotate3d(0, 1, 0, 148deg) rotate3d(0, 0, 1, 148deg);
-  }
-  60% {
-    -webkit-transform: rotate3d(1, 0, 0, 216deg) rotate3d(0, 1, 0, 216deg) rotate3d(0, 0, 1, 216deg);
-            transform: rotate3d(1, 0, 0, 216deg) rotate3d(0, 1, 0, 216deg) rotate3d(0, 0, 1, 216deg);
-  }
-  80% {
-    -webkit-transform: rotate3d(1, 0, 0, 288deg) rotate3d(0, 1, 0, 288deg) rotate3d(0, 0, 1, 288deg);
-            transform: rotate3d(1, 0, 0, 288deg) rotate3d(0, 1, 0, 288deg) rotate3d(0, 0, 1, 288deg);
-  }
-  100% {
-    -webkit-transform: rotate3d(1, 0, 0, 360deg) rotate3d(0, 1, 0, 360deg) rotate3d(0, 0, 1, 360deg);
-            transform: rotate3d(1, 0, 0, 360deg) rotate3d(0, 1, 0, 360deg) rotate3d(0, 0, 1, 360deg);
+  to {
+    -webkit-transform: rotateY(360deg) rotateX(30deg) rotateZ(30deg);
+            transform: rotateY(360deg) rotateX(30deg) rotateZ(30deg);
   }
 }
 
-@keyframes revolve {
-  0% {
-    -webkit-transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 0deg);
-            transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 0deg);
+@keyframes rotate {
+  from {
+    -webkit-transform: rotateY(0) rotateX(30deg) rotateZ(30deg);
+            transform: rotateY(0) rotateX(30deg) rotateZ(30deg);
   }
-  20% {
-    -webkit-transform: rotate3d(1, 0, 0, 72deg) rotate3d(0, 1, 0, 72deg) rotate3d(0, 0, 1, 72deg);
-            transform: rotate3d(1, 0, 0, 72deg) rotate3d(0, 1, 0, 72deg) rotate3d(0, 0, 1, 72deg);
-  }
-  40% {
-    -webkit-transform: rotate3d(1, 0, 0, 148deg) rotate3d(0, 1, 0, 148deg) rotate3d(0, 0, 1, 148deg);
-            transform: rotate3d(1, 0, 0, 148deg) rotate3d(0, 1, 0, 148deg) rotate3d(0, 0, 1, 148deg);
-  }
-  60% {
-    -webkit-transform: rotate3d(1, 0, 0, 216deg) rotate3d(0, 1, 0, 216deg) rotate3d(0, 0, 1, 216deg);
-            transform: rotate3d(1, 0, 0, 216deg) rotate3d(0, 1, 0, 216deg) rotate3d(0, 0, 1, 216deg);
-  }
-  80% {
-    -webkit-transform: rotate3d(1, 0, 0, 288deg) rotate3d(0, 1, 0, 288deg) rotate3d(0, 0, 1, 288deg);
-            transform: rotate3d(1, 0, 0, 288deg) rotate3d(0, 1, 0, 288deg) rotate3d(0, 0, 1, 288deg);
-  }
-  100% {
-    -webkit-transform: rotate3d(1, 0, 0, 360deg) rotate3d(0, 1, 0, 360deg) rotate3d(0, 0, 1, 360deg);
-            transform: rotate3d(1, 0, 0, 360deg) rotate3d(0, 1, 0, 360deg) rotate3d(0, 0, 1, 360deg);
+  to {
+    -webkit-transform: rotateY(360deg) rotateX(30deg) rotateZ(30deg);
+            transform: rotateY(360deg) rotateX(30deg) rotateZ(30deg);
   }
 }
