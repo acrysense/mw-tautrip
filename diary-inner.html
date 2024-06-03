@@ -321,6 +321,20 @@
 	<!-- scripts -->
 	<script src="js/vendor.min.js"></script>
 	<script src="js/app.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+	<script>
+		// Убедитесь, что DOM полностью загружен
+		document.addEventListener("DOMContentLoaded", function() {
+			// Инициализируйте анимацию
+			lottie.loadAnimation({
+				container: document.getElementById('lottie-container'), // контейнер для анимации
+				renderer: 'svg', // рендерер анимации (svg/canvas/html)
+				loop: true, // зацикливание анимации
+				autoplay: true, // автоматическое воспроизведение анимации
+				path: 'dice.json' // путь к вашему JSON файлу с анимацией
+			});
+		});
+	</script>
 </body>
 
 </html>
