@@ -341,7 +341,7 @@
 			<!-- application -->
 			<section class="application" id="application">
 				<div class="container">
-					<form action="#" class="application__wrapper">
+					<form action="#" class="application__wrapper validation-form">
 						<div class="application__left">
 							<h2 class="application__heading">Хочешь быть <br>в курсе новых историй?</h2>
 							<p class="application__description">Мы будем присылать информацию <br>по новинкам и обновлениям</p>
@@ -349,15 +349,15 @@
 								<!-- add 'is--error' for visible error message -->
 								<div class="input-field application__input">
 									<div class="input-field__inner">
-										<input type="text" class="input-field__input" placeholder="Имя">
+										<input type="text" class="input-field__input" placeholder="Имя" data-validation="required">
 										<span class="input-field__error">Введите имя пользователя</span>
 									</div>
 								</div>
 								<!-- add 'is--error' for visible error message -->
 								<div class="input-field application__input">
 									<div class="input-field__inner">
-										<input type="email" class="input-field__input" placeholder="E-mail">
-										<span class="input-field__error">Введите имя пользователя</span>
+										<input type="email" class="input-field__input" placeholder="E-mail" data-validation="required">
+										<span class="input-field__error">Введите e-mail</span>
 									</div>
 								</div>
 							</div>
