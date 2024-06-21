@@ -6399,35 +6399,8 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 @media screen and (max-width: 743px) {
   .calendar-inner__links {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-clip-path: inset(0 0 30px 0);
-            clip-path: inset(0 0 30px 0);
-  }
-}
-@media screen and (min-width: 430px) and (max-width: 743px) {
-  .calendar-inner__links {
-    margin-right: -20px;
-    margin-left: -20px;
-    margin-bottom: -30px;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-bottom: 30px;
-    max-width: calc(100% + 40px);
-  }
-}
-@media screen and (max-width: 429px) {
-  .calendar-inner__links {
-    margin-top: 24px;
-    margin-right: -16px;
-    margin-left: -16px;
-    margin-bottom: -30px;
-    padding-right: 16px;
-    padding-left: 16px;
-    padding-bottom: 30px;
-    max-width: calc(100% + 32px);
+    margin-right: -10px;
+    margin-bottom: -10px;
   }
 }
 .calendar-inner__link {
@@ -6455,15 +6428,23 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
     background: #FFFFFF;
   }
 }
-@media screen and (min-width: 744px) {
+@media screen and (max-width: 743px) {
+  .calendar-inner__link {
+    min-width: 111px;
+  }
+}
+@media screen and (min-width: 430px) {
   .calendar-inner__link {
     margin-right: 16px;
     margin-bottom: 16px;
   }
 }
-@media screen and (max-width: 743px) {
-  .calendar-inner__link + .calendar-inner__link {
-    margin-left: 16px;
+@media screen and (max-width: 429px) {
+  .calendar-inner__link {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 7.5px 17px;
+    font-size: 18px;
   }
 }
 .calendar-inner__info {
